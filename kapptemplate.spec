@@ -5,22 +5,21 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kapptemplate
-Version  : 18.08.0
-Release  : 1
-URL      : https://download.kde.org/stable/applications/18.08.0/src/kapptemplate-18.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.08.0/src/kapptemplate-18.08.0.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.08.0/src/kapptemplate-18.08.0.tar.xz.sig
+Version  : 18.12.2
+Release  : 2
+URL      : https://download.kde.org/stable/applications/18.12.2/src/kapptemplate-18.12.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/18.12.2/src/kapptemplate-18.12.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/18.12.2/src/kapptemplate-18.12.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0
-Requires: kapptemplate-bin
-Requires: kapptemplate-data
-Requires: kapptemplate-license
-Requires: kapptemplate-locales
+Requires: kapptemplate-bin = %{version}-%{release}
+Requires: kapptemplate-data = %{version}-%{release}
+Requires: kapptemplate-license = %{version}-%{release}
+Requires: kapptemplate-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
-BuildRequires : karchive-dev
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 
 %description
 How To Build This Template
@@ -36,8 +35,8 @@ make install  or  su -c 'make install'  or  sudo make install
 %package bin
 Summary: bin components for the kapptemplate package.
 Group: Binaries
-Requires: kapptemplate-data
-Requires: kapptemplate-license
+Requires: kapptemplate-data = %{version}-%{release}
+Requires: kapptemplate-license = %{version}-%{release}
 
 %description bin
 bin components for the kapptemplate package.
@@ -76,28 +75,28 @@ locales components for the kapptemplate package.
 
 
 %prep
-%setup -q -n kapptemplate-18.08.0
+%setup -q -n kapptemplate-18.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535169775
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1549862055
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535169775
+export SOURCE_DATE_EPOCH=1549862055
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/kapptemplate
-cp COPYING %{buildroot}/usr/share/doc/kapptemplate/COPYING
-cp COPYING.DOC %{buildroot}/usr/share/doc/kapptemplate/COPYING.DOC
-cp src/templates/C++/kde-frameworks5/COPYING %{buildroot}/usr/share/doc/kapptemplate/src_templates_C++_kde-frameworks5_COPYING
-cp src/templates/C++/kde-frameworks5/COPYING.DOC %{buildroot}/usr/share/doc/kapptemplate/src_templates_C++_kde-frameworks5_COPYING.DOC
+mkdir -p %{buildroot}/usr/share/package-licenses/kapptemplate
+cp COPYING %{buildroot}/usr/share/package-licenses/kapptemplate/COPYING
+cp COPYING.DOC %{buildroot}/usr/share/package-licenses/kapptemplate/COPYING.DOC
+cp src/templates/C++/kde-frameworks5/COPYING %{buildroot}/usr/share/package-licenses/kapptemplate/src_templates_C++_kde-frameworks5_COPYING
+cp src/templates/C++/kde-frameworks5/COPYING.DOC %{buildroot}/usr/share/package-licenses/kapptemplate/src_templates_C++_kde-frameworks5_COPYING.DOC
 pushd clr-build
 %make_install
 popd
@@ -159,11 +158,11 @@ popd
 /usr/share/doc/HTML/uk/kapptemplate/index.docbook
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/kapptemplate/COPYING
-/usr/share/doc/kapptemplate/COPYING.DOC
-/usr/share/doc/kapptemplate/src_templates_C++_kde-frameworks5_COPYING
-/usr/share/doc/kapptemplate/src_templates_C++_kde-frameworks5_COPYING.DOC
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/kapptemplate/COPYING
+/usr/share/package-licenses/kapptemplate/COPYING.DOC
+/usr/share/package-licenses/kapptemplate/src_templates_C++_kde-frameworks5_COPYING
+/usr/share/package-licenses/kapptemplate/src_templates_C++_kde-frameworks5_COPYING.DOC
 
 %files locales -f kapptemplate.lang
 %defattr(-,root,root,-)
