@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kapptemplate
-Version  : 20.08.3
-Release  : 24
-URL      : https://download.kde.org/stable/release-service/20.08.3/src/kapptemplate-20.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.08.3/src/kapptemplate-20.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.08.3/src/kapptemplate-20.08.3.tar.xz.sig
+Version  : 20.12.0
+Release  : 25
+URL      : https://download.kde.org/stable/release-service/20.12.0/src/kapptemplate-20.12.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.12.0/src/kapptemplate-20.12.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.12.0/src/kapptemplate-20.12.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GFDL-1.2 GPL-2.0 GPL-3.0
@@ -76,15 +76,15 @@ locales components for the kapptemplate package.
 
 
 %prep
-%setup -q -n kapptemplate-20.08.3
-cd %{_builddir}/kapptemplate-20.08.3
+%setup -q -n kapptemplate-20.12.0
+cd %{_builddir}/kapptemplate-20.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604595207
+export SOURCE_DATE_EPOCH=1607707673
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -100,19 +100,19 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1604595207
+export SOURCE_DATE_EPOCH=1607707673
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kapptemplate
-cp %{_builddir}/kapptemplate-20.08.3/COPYING %{buildroot}/usr/share/package-licenses/kapptemplate/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/kapptemplate-20.08.3/COPYING.DOC %{buildroot}/usr/share/package-licenses/kapptemplate/fcbf818f92ef8679a88f3778b12b4c8b5810545b
-cp %{_builddir}/kapptemplate-20.08.3/src/templates/C++/kde-frameworks5-simple/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kapptemplate/2a638514c87c4923c0570c55822620fad56f2a33
-cp %{_builddir}/kapptemplate-20.08.3/src/templates/C++/kde-frameworks5-simple/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kapptemplate/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/kapptemplate-20.08.3/src/templates/C++/kde-frameworks5-simple/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kapptemplate/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kapptemplate-20.08.3/src/templates/C++/kde-frameworks5-simple/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kapptemplate/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kapptemplate-20.08.3/src/templates/C++/kde-frameworks5/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kapptemplate/2a638514c87c4923c0570c55822620fad56f2a33
-cp %{_builddir}/kapptemplate-20.08.3/src/templates/C++/kde-frameworks5/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kapptemplate/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/kapptemplate-20.08.3/src/templates/C++/kde-frameworks5/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kapptemplate/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kapptemplate-20.08.3/src/templates/C++/kde-frameworks5/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kapptemplate/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kapptemplate-20.12.0/COPYING %{buildroot}/usr/share/package-licenses/kapptemplate/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/kapptemplate-20.12.0/COPYING.DOC %{buildroot}/usr/share/package-licenses/kapptemplate/fcbf818f92ef8679a88f3778b12b4c8b5810545b
+cp %{_builddir}/kapptemplate-20.12.0/src/templates/C++/kde-frameworks5-simple/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kapptemplate/2a638514c87c4923c0570c55822620fad56f2a33
+cp %{_builddir}/kapptemplate-20.12.0/src/templates/C++/kde-frameworks5-simple/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kapptemplate/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/kapptemplate-20.12.0/src/templates/C++/kde-frameworks5-simple/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kapptemplate/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kapptemplate-20.12.0/src/templates/C++/kde-frameworks5-simple/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kapptemplate/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kapptemplate-20.12.0/src/templates/C++/kde-frameworks5/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kapptemplate/2a638514c87c4923c0570c55822620fad56f2a33
+cp %{_builddir}/kapptemplate-20.12.0/src/templates/C++/kde-frameworks5/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kapptemplate/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/kapptemplate-20.12.0/src/templates/C++/kde-frameworks5/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kapptemplate/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kapptemplate-20.12.0/src/templates/C++/kde-frameworks5/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kapptemplate/7d9831e05094ce723947d729c2a46a09d6e90275
 pushd clr-build
 %make_install
 popd
